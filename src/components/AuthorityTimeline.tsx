@@ -25,7 +25,7 @@ const experiences = [
     {
         company: "CMoney",
         logo: null,
-        description: "400人團隊實戰操盤",
+        description: "擔任COO，帶領400人團隊",
         isText: true,
         isCMoney: true,
     },
