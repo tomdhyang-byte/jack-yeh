@@ -9,43 +9,43 @@ interface HeroSectionProps {
 
 export default function HeroSection({ formUrl }: HeroSectionProps) {
     return (
-        <section className="relative h-screen min-h-[600px] w-full overflow-hidden bg-slate-900">
+        <section className="relative flex flex-col lg:block h-[100dvh] min-h-[600px] w-full overflow-hidden bg-slate-900">
             {/* Background Image Container */}
-            <div className="absolute inset-0 z-0">
+            <div className="relative h-[45vh] w-full shrink-0 lg:absolute lg:inset-0 lg:h-full lg:z-0">
                 <Image
                     src="/images/portrait_with_background_suit.png"
                     alt="Strategy Consultant"
                     fill
-                    className="object-cover object-[35%_center] lg:object-[0%_25%] lg:scale-110 lg:translate-x-24"
+                    className="object-cover object-top lg:object-[0%_25%] lg:scale-110 lg:translate-x-24"
                     priority
                     sizes="100vw"
                 />
 
-                {/* Gradient Overlays for Immersive Blend */}
-                {/* 1. Main Fade from Left (Dark Navy to Transparent) */}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+                {/* Gradient Overlays */}
+                {/* 1. Desktop Main Fade from Left */}
+                <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
 
-                {/* 2. Bottom Fade (Seamless transition to next section) */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent lg:from-slate-900 lg:via-slate-900/50" />
+                {/* 2. Desktop Bottom Fade */}
+                <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
 
-                {/* 3. Mobile Top-Left Overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/70 to-transparent lg:hidden" />
+                {/* 3. Mobile Bottom Fade (Transition to dark text area) */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 to-transparent lg:hidden" />
             </div>
 
-            <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div className="relative z-10 flex-1 flex items-center lg:h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-slate-900 lg:bg-transparent">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="max-w-2xl text-left pt-20 lg:pt-0"
+                    className="w-full max-w-2xl text-left pt-6 pb-12 lg:pt-0 lg:pb-0"
                 >
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-12 drop-shadow-lg tracking-wide">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8 lg:mb-12 drop-shadow-lg tracking-wide">
                         不是更努力，
                         <br className="sm:hidden" />
                         <span className="sm:ml-2">而是找對方向</span>
                     </h1>
 
-                    <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-10 max-w-lg lg:mx-0 drop-shadow-md font-medium">
+                    <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 lg:mb-10 max-w-lg lg:mx-0 drop-shadow-md font-medium">
                         從騰訊、Meta 到麥肯錫，再到 400 人企業 COO。<br className="hidden lg:block" />
                         我幫助高潛力工作者，看懂組織、做對關鍵決策，加速跨階層成長。
                     </p>
@@ -69,12 +69,12 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                 </motion.div>
             </div>
 
-            {/* Scroll indicator */}
+            {/* Scroll indicator (Desktop Only) */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.8 }}
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+                className="hidden lg:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
             >
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
