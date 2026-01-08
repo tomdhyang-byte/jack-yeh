@@ -16,7 +16,7 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                     src="/images/portrait_with_background_suit.png"
                     alt="Strategy Consultant"
                     fill
-                    className="object-cover object-[75%_center] lg:object-[0%_25%] lg:scale-110 lg:translate-x-24"
+                    className="object-cover object-[35%_center] lg:object-[0%_25%] lg:scale-110 lg:translate-x-24"
                     priority
                     sizes="100vw"
                 />
