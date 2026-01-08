@@ -15,7 +15,7 @@ const services = [
         icon: BrainCircuit,
         title: "商業難題拆解",
         description:
-            "當局者迷。用諮詢框架 (MECE) 幫你拆解變因，找出只需 20% 力氣的破局點。",
+            "當局者迷，用麥肯錫的 Problem Solving 框架幫你拆解變因，找出只需 20% 力氣的破局點。",
         gradient: "from-blue-500 to-indigo-600",
     },
     {

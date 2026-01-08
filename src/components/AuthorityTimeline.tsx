@@ -5,25 +5,29 @@ import Image from "next/image";
 
 const experiences = [
     {
+        year: "2016 - 2020",
         company: "Tencent",
         logo: "/images/logos/tencent.svg",
         description: "習得世界級產品思維",
     },
     {
+        year: "2020 - 2022",
         company: "Meta",
         logo: "/images/logos/meta.svg",
         description: "掌握數據驅動決策",
     },
     {
+        year: "2022 - 2024",
         company: "McKinsey",
         logo: "/images/logos/mckinsey.svg",
         description: "掌握結構化商業解題框架",
     },
     {
-        company: "COO",
+        company: "CMoney",
         logo: null,
         description: "400人團隊實戰操盤",
         isText: true,
+        isCMoney: true,
     },
 ];
 
@@ -49,9 +53,11 @@ export default function AuthorityTimeline() {
                 {/* Timeline */}
                 <div className="relative">
                     {/* Connection line - desktop */}
-                    <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-200 to-transparent transform -translate-y-1/2" />
+                    {/* Positioned behind the cards, vertically centered relative to the LOGO card (which is approx ~96px + margins) */}
+                    {/* We need to adjust top position to match the new layout structure: Year + Spacing + Logo Center */}
+                    <div className="hidden lg:block absolute top-[88px] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-200 to-transparent z-0" />
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 lg:gap-4">
                         {experiences.map((exp, index) => (
                             <motion.div
                                 key={exp.company}
@@ -59,16 +65,32 @@ export default function AuthorityTimeline() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="relative flex flex-col items-center"
+                                className="relative flex flex-col items-center group"
                             >
+                                {/* Year Range */}
+                                <div className="mb-4 text-center">
+                                    <span className="text-lg font-bold text-slate-800 tracking-tight block">
+                                        {exp.year}
+                                    </span>
+                                </div>
+
                                 {/* Logo/Icon container */}
-                                <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center mb-4 hover:shadow-xl transition-shadow duration-300">
+                                <div className="relative z-10 w-32 h-20 sm:w-40 sm:h-24 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center mb-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl px-4">
                                     {exp.isText ? (
-                                        <span className="text-2xl sm:text-3xl font-bold text-slate-700">
-                                            COO
+                                        <span className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                                            {
+                                                /* @ts-ignore - simplified for this component */
+                                                exp.isCMoney ? (
+                                                    <>
+                                                        <span className="text-red-600">CM</span>oney
+                                                    </>
+                                                ) : (
+                                                    exp.company
+                                                )
+                                            }
                                         </span>
                                     ) : (
-                                        <div className="relative w-12 h-12 sm:w-14 sm:h-14 logo-grayscale">
+                                        <div className="relative w-full h-full p-2">
                                             <Image
                                                 src={exp.logo!}
                                                 alt={`${exp.company} logo`}
@@ -80,7 +102,7 @@ export default function AuthorityTimeline() {
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-sm sm:text-base text-slate-600 text-center font-medium">
+                                <p className="text-sm sm:text-base text-slate-600 text-center font-medium max-w-[200px] leading-relaxed">
                                     {exp.description}
                                 </p>
                             </motion.div>

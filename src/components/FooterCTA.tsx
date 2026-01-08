@@ -25,11 +25,11 @@ export default function FooterCTA({ formUrl }: FooterCTAProps) {
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
                         你的時間很寶貴，
                         <br className="hidden sm:block" />
-                        別讓「試錯成本」吃掉你的未來。
+                        別讓「試錯成本」吃掉你的未來
                     </h2>
 
                     <p className="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                        本月諮詢名額優先開放給演講現場聽眾，額滿即止。
+                        每月諮詢名額僅5位，額滿即止
                     </p>
 
                     <motion.a

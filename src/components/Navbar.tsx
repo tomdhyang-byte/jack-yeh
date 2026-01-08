@@ -37,7 +37,7 @@ export default function Navbar({ formUrl }: NavbarProps) {
                             className={`text-lg sm:text-xl font-bold transition-colors duration-300 ${isScrolled ? "text-slate-900" : "text-white"
                                 }`}
                         >
-                            Strategy
+                            Jack Yeh
                         </span>
                     </a>
 

@@ -12,7 +12,7 @@
   --color-accent-hover: #b45309;
   --color-border: #e2e8f0;
   --color-card-bg: #f8fafc;
-  
+
   /* Fonts */
   --font-sans: var(--font-inter), var(--font-noto-sans-tc), system-ui, sans-serif;
 }
@@ -65,4 +65,23 @@ html {
 ::selection {
   background-color: #d97706;
   color: white;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.hover\:pause:hover {
+  animation-play-state: paused;
 }

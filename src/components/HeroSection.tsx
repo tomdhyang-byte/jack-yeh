@@ -16,7 +16,7 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                     src="/images/portrait_with_background_suit.png"
                     alt="Strategy Consultant"
                     fill
-                    className="object-cover object-center lg:object-[28%_25%] scale-105"
+                    className="object-cover object-center lg:object-[0%_25%] scale-110 lg:translate-x-24"
                     priority
                     sizes="100vw"
                 />
@@ -42,16 +42,15 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-12 drop-shadow-lg tracking-wide">
                         不是更努力，
                         <br className="sm:hidden" />
-                        <span className="text-amber-500 sm:ml-2">而是找對方向。</span>
+                        <span className="sm:ml-2">而是找對方向</span>
                     </h1>
 
                     <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0 drop-shadow-md font-medium">
-                        從騰訊、Meta 到麥肯錫，再到 400 人企業 COO。
-                        我將用頂級管理顧問的視角，為你的職涯與商業難題，
-                        進行一次精準的「外科手術」。
+                        從騰訊、Meta 到麥肯錫，再到 400 人企業 COO。<br className="hidden lg:block" />
+                        我幫助高潛力工作者，看懂組織、做對關鍵決策，加速跨階層成長。
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-6 justify-center lg:justify-start">
+                    <div className="flex flex-col items-center lg:items-start gap-4">
                         <motion.a
                             href={formUrl}
                             target="_blank"
@@ -63,7 +62,7 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                             👉 申請戰略診斷
                         </motion.a>
 
-                        <p className="text-amber-400 text-sm font-semibold tracking-wide border-b border-amber-400/30 pb-0.5">
+                        <p className="text-amber-400 text-sm font-semibold tracking-wide pl-2">
                             本月僅餘 5 個名額
                         </p>
                     </div>
