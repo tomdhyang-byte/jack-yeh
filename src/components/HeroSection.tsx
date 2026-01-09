@@ -46,7 +46,7 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                     </h1>
 
                     <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 lg:mb-10 max-w-lg lg:mx-0 drop-shadow-md font-medium">
-                        從騰訊、Meta 到麥肯錫，再到 400 人企業 COO。<br className="hidden lg:block" />
+                        從騰訊、Meta 到麥肯錫，再到 400 人企業 COO<br className="hidden lg:block" />
                         我幫助高潛力工作者，看懂組織、做對關鍵決策，加速跨階層成長。
                     </p>
 
@@ -63,7 +63,7 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                         </motion.a>
 
                         <p className="text-amber-400 text-sm font-semibold tracking-wide pl-2">
-                            本月僅餘 5 個名額
+                            每月諮詢名額僅5位，額滿即止
                         </p>
                     </div>
                 </motion.div>

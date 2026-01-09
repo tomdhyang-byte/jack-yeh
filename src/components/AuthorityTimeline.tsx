@@ -8,26 +8,24 @@ const experiences = [
         year: "2016 - 2020",
         company: "Tencent",
         logo: "/images/logos/tencent.svg",
-        description: "習得世界級產品思維",
+        description: "在亞洲最大科技公司之一，\n深入理解「世界級產品與組織如何規模化」。",
     },
     {
         year: "2020 - 2022",
         company: "Meta",
         logo: "/images/logos/meta.svg",
-        description: "掌握數據驅動決策",
+        description: "在高度數據驅動的環境中，\n學會如何用決策品質，\n拉開個人與團隊差距。",
     },
     {
         year: "2022 - 2024",
         company: "McKinsey",
         logo: "/images/logos/mckinsey.svg",
-        description: "掌握結構化商業解題框架",
+        description: "作為顧問與面試官，\n參與頂尖人才的篩選、評估與升級。",
     },
     {
-        company: "CMoney",
+        company: "知名\n金融科技公司",
         logo: null,
-        description: "擔任COO，帶領400人團隊",
-        isText: true,
-        isCMoney: true,
+        description: "現在，我站在企業「配置資源與押注人才」的位置，\n每天都在做取捨與判斷。",
     },
 ];
 
@@ -43,10 +41,10 @@ export default function AuthorityTimeline() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        從矽谷到亞洲，從理論到實戰
+                        你職涯的下一個關鍵決策，值得更高階的視角
                     </h2>
-                    <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-                        跨越全球頂尖科技公司與顧問機構的實戰經驗
+                    <p className="text-slate-500 text-lg max-w-2xl mx-auto whitespace-pre-line">
+                        從 McKinsey、Meta、Tencent 到 COO{"\n"}我幫助專業工作者做出真正拉開差距的職涯選擇
                     </p>
                 </motion.div>
 
@@ -68,41 +66,41 @@ export default function AuthorityTimeline() {
                                 className="relative flex flex-col items-center group"
                             >
                                 {/* Year Range */}
-                                <div className="mb-4 text-center">
-                                    <span className="text-lg font-bold text-slate-800 tracking-tight block">
-                                        {exp.year}
-                                    </span>
-                                </div>
+                                {exp.year && (
+                                    <div className="mb-4 text-center">
+                                        <span className="text-lg font-bold text-slate-800 tracking-tight block">
+                                            {exp.year}
+                                        </span>
+                                    </div>
+                                )}
+                                {!exp.year && (
+                                    <div className="mb-4 text-center opacity-0 select-none">
+                                        <span className="text-lg font-bold text-slate-800 tracking-tight block">
+                                            Present
+                                        </span>
+                                    </div>
+                                )}
 
                                 {/* Logo/Icon container */}
                                 <div className="relative z-10 w-32 h-20 sm:w-40 sm:h-24 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center mb-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl px-4">
-                                    {exp.isText ? (
-                                        <span className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                                            {
-                                                /* @ts-ignore - simplified for this component */
-                                                exp.isCMoney ? (
-                                                    <>
-                                                        <span className="text-red-600">CM</span>oney
-                                                    </>
-                                                ) : (
-                                                    exp.company
-                                                )
-                                            }
-                                        </span>
-                                    ) : (
+                                    {exp.logo ? (
                                         <div className="relative w-full h-full p-2">
                                             <Image
-                                                src={exp.logo!}
+                                                src={exp.logo}
                                                 alt={`${exp.company} logo`}
                                                 fill
                                                 className="object-contain"
                                             />
                                         </div>
+                                    ) : (
+                                        <span className="text-sm sm:text-base font-bold text-slate-900 text-center leading-snug whitespace-pre-line">
+                                            {exp.company}
+                                        </span>
                                     )}
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-sm sm:text-base text-slate-600 text-center font-medium max-w-[200px] leading-relaxed">
+                                <p className="text-sm sm:text-base text-slate-600 text-center font-medium max-w-[200px] leading-relaxed whitespace-pre-line">
                                     {exp.description}
                                 </p>
                             </motion.div>
