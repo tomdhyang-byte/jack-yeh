@@ -40,14 +40,16 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
                     className="w-full max-w-2xl text-left pt-6 pb-12 lg:pt-0 lg:pb-0"
                 >
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8 lg:mb-12 drop-shadow-lg tracking-wide">
-                        不是更努力，
-                        <br className="sm:hidden" />
-                        <span className="sm:ml-2">而是找對方向</span>
+                        不是更努力，<br />
+                        <span className="whitespace-nowrap">而是做對選擇，走在對的方向上</span>
                     </h1>
 
-                    <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 lg:mb-10 max-w-lg lg:mx-0 drop-shadow-md font-medium">
-                        從騰訊、Meta 到麥肯錫，再到 400 人企業 COO<br className="hidden lg:block" />
-                        我幫助高潛力工作者，看懂組織、做對關鍵決策，加速跨階層成長。
+                    <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 lg:mb-10 max-w-2xl lg:mx-0 drop-shadow-md font-medium">
+                        從騰訊、Meta、麥肯錫，<br />
+                        到知名金融科技公司的營運角色，<br />
+                        我長期站在企業「配置資源、判斷決策品質」的視角，<br />
+                        賦能專業工作者用更高階的判斷，解決最困難、複雜、陌生的問題，<br />
+                        做出真正拉開差距的職涯與商業選擇。
                     </p>
 
                     <div className="flex flex-col items-start gap-4">
