@@ -46,10 +46,10 @@ export default function HeroSection({ formUrl }: HeroSectionProps) {
 
                     <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 lg:mb-10 max-w-2xl lg:mx-0 drop-shadow-md font-medium">
                         從騰訊、Meta、麥肯錫，<br />
-                        到知名金融科技公司的營運角色，<br />
-                        我長期站在企業「配置資源、判斷決策品質」的視角，<br />
-                        賦能專業工作者用更高階的判斷，解決最困難、複雜、陌生的問題，<br />
-                        做出真正拉開差距的職涯與商業選擇。
+                        到知名金融科技公司擔任營運長，<br />
+                        我長期站在企業「如何配置資源、判斷決策品質」的第一線視角，<br />
+                        協助專業工作者在關鍵轉折點，看清問題本質，<br />
+                        做出真正拉開長期差距的職涯與商業選擇。
                     </p>
 
                     <div className="flex flex-col items-start gap-4">

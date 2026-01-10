@@ -19,7 +19,8 @@ const experiences = [
     {
         year: "2022 - 2024",
         company: "McKinsey",
-        logo: "/images/logos/mckinsey.svg",
+        logo: "/images/logos/mckinsey.jpg",
+        backgroundColor: "#051c2c",
         description: "作為顧問與面試官，\n參與頂尖人才的篩選、評估與升級。",
     },
     {
@@ -82,7 +83,10 @@ export default function AuthorityTimeline() {
                                 )}
 
                                 {/* Logo/Icon container */}
-                                <div className="relative z-10 w-32 h-20 sm:w-40 sm:h-24 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center mb-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl px-4">
+                                <div
+                                    className="relative z-10 w-32 h-20 sm:w-40 sm:h-24 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center mb-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl px-4 overflow-hidden"
+                                    style={exp.backgroundColor ? { backgroundColor: exp.backgroundColor, borderColor: exp.backgroundColor } : {}}
+                                >
                                     {exp.logo ? (
                                         <div className="relative w-full h-full p-2">
                                             <Image
